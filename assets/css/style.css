@@ -1,5 +1,19 @@
 .header {
-    color: white;
-    text-align: center;
-    padding: 20px;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.weather {
+  background-color: royalblue;
+  text-align: center;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  align-content: flex-end;
+  display: inline-block;
+}
+
+#currentWeather {
+  display: none;
 }
