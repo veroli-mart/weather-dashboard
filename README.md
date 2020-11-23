@@ -22,6 +22,7 @@ As of this moment, I am still working on the functionality of the page. It is go
 
 ## Deployment
 
+To see website, click [here](https://veroli-mart.github.io/weather-dashboard/)
 Please refer to 'Opening Page' for the reason of an incomplete wesbite
 
 ## Contribution
