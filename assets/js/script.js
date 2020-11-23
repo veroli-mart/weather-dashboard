@@ -12,44 +12,47 @@
 var searchFormEl = document.querySelector("#form-input");
 var cityInputEl = document.querySelector("#searchTerm");
 var cityDisplayName = document.querySelector("#city");
-var currentDay = moment();
-var apiKey = "5845809d7889f7a45fda45775e2e9a45";
+var todaysDate = moment();
+var apiKey = "";
 var history = [];
 
+function findCity() {
+  $(searchTerm);
+}
 //weather api
 function currentDay() {
   fetch(
-    "https://api.openweathermap.org/data/2.5/weather?q=" +
+    "https://api.openweathermap.org/data/2.5/forecast?q=" +
       city +
-      "&units=imperial&appid=" +
-      apiKey
+      "&appid=e2c6cdeb7507c8fc17c433e8885d8d56"
   )
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       document.querySelector("#currentWeather").innerHTML = `
-      <h2>${data.name}</h2>
-      <h4>${new Date()}</h4>
-      <p>Current Weather: ${data.main.temp}F</p>
-      <p>Wind: ${data.wind.speed}MPH</p>
-      <p>Humidity: ${data.main.humidity}</p>
+      <h2>Philadelphia</h2>
+      <h4>11/22/202</h4>
+      <p>Current Weather: 50F</p>
+      <p>Wind: 10MPH</p>
+      <p>Humidity: 10%</p>
       <p>UV Index: 2.5</p>`; // firgure out how to get uv index....
       console.log(data);
-      weeklyForecast(data.coord.lon, data.coord.lat);
+      // weeklyForecast(data.coord.lon, data.coord.lat);
       // city api?
-      if (!cityInputEl) {
-        return fetch(
-          "https://api.openweathermap.org/data/2.5/onecall?lat=" +
-            lattitude +
-            "&lon=" +
-            longitude +
-            "&exclude={part}&appid=" +
-            apiKey
-        );
-      }
+      // if (!cityInputEl) {
+      //   return fetch(
+      //     "https://api.openweathermap.org/data/2.5/onecall?lat=&lon=&exclude={part}&appid=e2c6cdeb7507c8fc17c433e8885d8d56"
+      //     // //lattitude +
+      //     //  +
+      //     // //longitude +
+      //     // "" +
+      //     // apiKey
+      //   );
+      // }
     });
 }
+currentDay();
 
 function uv() {
   if (current.uvi < 3) {
