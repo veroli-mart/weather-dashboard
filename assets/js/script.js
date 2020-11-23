@@ -54,6 +54,7 @@ function currentDay() {
 }
 currentDay();
 
+//
 function uv() {
   if (current.uvi < 3) {
     tempHTML += "low-uv text-light";
@@ -65,4 +66,8 @@ function uv() {
     tempHTML += "very-high-uv text-light";
   }
 }
+
+history = JSON.parse("");
+localStorage.getItem("history");
+localStorage.setItem("history", JSON.stringify(history));
 //so lost...
