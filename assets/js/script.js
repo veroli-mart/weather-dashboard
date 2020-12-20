@@ -13,8 +13,10 @@ submitButtonEl.addEventListener("click", function (event) {
 
   var cityInput = document.querySelector("#userCity").value.trim();
 
-  currentWeatherDisplay(cityInput);
-  saveCity(cityInput);
+  if (cityInput !== "") {
+    currentWeatherDisplay(cityInput);
+    saveCity(cityInput);
+  }
 });
 
 //function for current weather
@@ -83,21 +85,14 @@ function weekDisplay(lat, lon) {
 }
 
 function loadPreviousCities() {
-  document.querySelector("#userCity").innerHTML = "";
+  document.querySelector("#userCity").value = "";
   var citiesArray = JSON.parse(localStorage.getItem("previousCities"));
-  if (storageLoad === false) {
-    citiesArray.forEach((city) => {
-      document.querySelector(
-        "#cityList"
-      ).innerHTML += `<li class="list-group-item userItem">${city}</li>`;
-    });
-    storageLoad = true;
-  } else {
-    let citiesArrayLength = citiesArray.length - 1;
+  document.querySelector("#cityList").innerHTML = "";
+  citiesArray.forEach((city) => {
     document.querySelector(
       "#cityList"
-    ).innerHTML += `<li class="list-group-item userItem">${citiesArray[citiesArrayLength]}</li>`;
-  }
+    ).innerHTML += `<li class="list-group-item userItem">${city}</li>`;
+  });
   document.querySelectorAll(".userItem").forEach((city) => {
     city.addEventListener("click", function (event) {
       event.preventDefault();
@@ -116,7 +111,9 @@ function saveCity(cityInput) {
   }
   //take value of the city input
   var citiesArray = JSON.parse(localStorage.getItem("previousCities"));
-  citiesArray.push(cityInput);
+  if (!citiesArray.includes(cityInput)) {
+    citiesArray.push(cityInput);
+  }
 
   //save back to local storage
   localStorage.setItem("previousCities", JSON.stringify(citiesArray));
