@@ -16,9 +16,10 @@ The tools used to create this website were:
 - MOMENT.JS
 - FONT AWESOME
 
-## Opening Page
+## Demo Picture
 
-As of this moment, I am still working on the functionality of the page. It is going to take a bit of time. Your patience is greatly appreciated.
+Here is an example of what happens when you search a city:
+![Weather Dashboard](./assets/images/weather-demo.png)
 
 ## Deployment
 
@@ -28,4 +29,4 @@ Please refer to 'Opening Page' for reason of incomplete wesbite
 
 ## Contribution
 
-Made with love by Veronica Martinez
+Made with &hearts; by Veronica Martinez
