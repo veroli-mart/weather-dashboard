@@ -14,18 +14,15 @@ The tools used to create this website were:
 - BOOTSTRAP
 - JQUERY
 - MOMENT.JS
-- FONT AWESOME
 
 ## Demo Picture
 
 Here is an example of what happens when you search a city:
-![Weather Dashboard](./assets/images/weather-demo.png)
+![Weather Dashboard](./assets/images/dashboard-demo.png)
 
 ## Deployment
 
 To see website, click [here](https://veroli-mart.github.io/weather-dashboard/) <br />
-
-Please refer to 'Opening Page' for reason of incomplete wesbite
 
 ## Contribution
 
